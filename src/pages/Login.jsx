@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Login = () => {
     return (
         <>
@@ -32,7 +34,7 @@ export const Login = () => {
                     Login
                 </button>
                 <p className="text-center">
-                    Belum punya akun? <a href="register.html">Register</a>
+                    Belum punya akun? <Link to="/register">Register</Link>
                 </p>
             </form>
         </>
