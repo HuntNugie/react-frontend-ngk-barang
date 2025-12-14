@@ -1,20 +1,6 @@
 export const Add_product = () => {
     return (
         <>
-            {/* SIDEBAR DESKTOP */}
-            <div className="col-lg-2 bg-light d-none d-lg-block border-end" style={{minHeight: "100vh"}}>
-                <div className="list-group list-group-flush mt-3">
-                    <a href="dashboard.html" className="list-group-item list-group-item-action">
-                        Dashboard
-                    </a>
-                    <a href="form_barang.html" className="list-group-item list-group-item-action active">
-                        Tambah Barang
-                    </a>
-                    <a href="login.html" className="list-group-item list-group-item-action text-danger">
-                        Logout
-                    </a>
-                </div>
-            </div>
             {/* CONTENT */}
             <div className="col-lg-10 p-4">
                 <div className="row justify-content-center">

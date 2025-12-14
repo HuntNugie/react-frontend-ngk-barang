@@ -1,20 +1,7 @@
 export const Dashboard = () => {
     return (
         <>
-            {/* SIDEBAR VERSION DESKTOP */}
-            <div className="col-lg-2 bg-light d-none d-lg-block border-end" style={{minHeight: "100vh"}}>
-                <div className="list-group list-group-flush mt-3">
-                    <a href="dashboard.html" className="list-group-item list-group-item-action active">
-                        Dashboard
-                    </a>
-                    <a href="form_barang.html" className="list-group-item list-group-item-action">
-                        Tambah Barang
-                    </a>
-                    <a href="login.html" className="list-group-item list-group-item-action text-danger">
-                        Logout
-                    </a>
-                </div>
-            </div>
+            
             {/* KONTEN */}
             <div className="col-lg-10 p-4">
                 <div className="row mb-4">
