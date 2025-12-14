@@ -4,7 +4,7 @@ import axios from "axios";
 export const AuthProvider = ({children}) => {
     const [isAuth, setIsAuth] = useState(false);
     const [loading, setLoading] = useState(true);
-    const [User, setUser] = useState(null);
+    const [user, setUser] = useState(null);
     const api = import.meta.env.VITE_BACKEND_API;
     useEffect(() => {
         const request = async () => {
@@ -24,5 +24,5 @@ export const AuthProvider = ({children}) => {
         request();
     }, []);
 
-    return <AuthContext.Provider value={{User, loading, isAuth}}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{user, loading, isAuth}}>{children}</AuthContext.Provider>;
 };

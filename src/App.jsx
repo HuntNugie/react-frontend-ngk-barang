@@ -5,6 +5,7 @@ import {Register} from "./pages/Register";
 import ProtectedLayout from "./layouts/Protected.layout";
 import {Dashboard} from "./pages/admin/Dashboard";
 import {Add_product} from "./pages/admin/Add_product";
+import {ProtectedRoute} from "./routes/Protected.route";
 function App() {
     return (
         <>
@@ -14,7 +15,13 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                 </Route>
-                <Route element={<ProtectedLayout />}>
+                <Route
+                    element={
+                        <ProtectedRoute>
+                            <ProtectedLayout />
+                        </ProtectedRoute>
+                    }
+                >
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/add-product" element={<Add_product />} />
                 </Route>
