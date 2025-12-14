@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LinkNavigation } from "../Admin_partial/LinkNavigation";
+import { Logout } from "../Admin_partial/Logout";
 
 export const SidebarMobile = () => {
     
@@ -10,9 +11,7 @@ export const SidebarMobile = () => {
                 <div className="list-group list-group-flush mt-3">
                   <LinkNavigation path={"/dashboard"} name={"Dashboard"}/>
                   <LinkNavigation path={"/add-product"} name={"Tambah Barang"}/>
-                    <Link href="login.html" className="list-group-item list-group-item-action text-danger">
-                        Logout
-                    </Link>
+                  <Logout/>
                 </div>
             </div>
         </>

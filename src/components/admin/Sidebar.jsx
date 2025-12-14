@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LinkNavigation } from "../Admin_partial/LinkNavigation";
+import { Logout } from "../Admin_partial/Logout";
 
 export const Sidebar = () => {
 
@@ -13,9 +14,7 @@ export const Sidebar = () => {
                 <div className="list-group list-group-flush">
                     <LinkNavigation path="/dashboard" name="Dashboard"/>
                     <LinkNavigation path="/add-product" name="Tambah barang"/>
-                    <Link href="login.html" className="list-group-item list-group-item-action text-danger">
-                        Logout
-                    </Link>
+                   <Logout/>
                 </div>
             </div>
         </div>
