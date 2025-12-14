@@ -1,4 +1,4 @@
-import {Routes, Route, BrowserRouter, Navigate} from "react-router-dom";
+import {Routes, Route, Navigate} from "react-router-dom";
 import GuestLayout from "./layouts/Guest.layout";
 import {Login} from "./pages/Login";
 import {Register} from "./pages/Register";
