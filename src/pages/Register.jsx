@@ -1,7 +1,7 @@
-import axios from "axios";
 import {useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {Loading} from "../components/Loading";
+import {UseAuth} from "../hooks/UseAuth";
 
 export const Register = () => {
     const [form, setForm] = useState({
@@ -12,11 +12,9 @@ export const Register = () => {
         jenis_kelamin: "",
         tgl_lahir: "",
     });
-    const navigateTo = useNavigate();
-    const [loading, setLoading] = useState(false);
-    const [isError, setIsError] = useState(false);
-    const [error, setError] = useState([]);
-    const api = import.meta.env.VITE_BACKEND_API;
+    const {isError, error, register, loading,setError,setIsError} = UseAuth();
+
+    /* global Swal */
 
     const handleChage = (e) => {
         setForm((prev) => ({
@@ -26,31 +24,8 @@ export const Register = () => {
     };
 
     const handleSubmit = async (e) => {
-        try {
-            e.preventDefault();
-
-            setLoading(true);
-            await axios.post(`${api}/api/auth/register`, form);
-            setIsError(false);
-            setError(null);
-            Swal.fire({
-                icon: "success",
-                title: "Registrasi Berhasil",
-                html: `
-    <p>Akun kamu berhasil dibuat.</p>
-    <p>Silakan login untuk melanjutkan.</p>
-  `,
-                confirmButtonText: "OK",
-            });
-            setTimeout(()=>{
-                navigateTo("/login", {replace: true});
-            },1500);
-        } catch (error) {
-            setIsError(true);
-            setError(error.response.data.error);
-        } finally {
-            setLoading(false);
-        }
+        e.preventDefault();
+        register(form);
     };
     // untuk error dengan sweet alert
     useEffect(() => {
